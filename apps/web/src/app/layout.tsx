@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <head />
-      <body className="flex min-h-screen flex-col bg-background font-sans antialiased">
+      <body className="bg-background flex min-h-screen flex-col font-sans antialiased">
         <Button variant="secondary">Hello ther</Button>
         {children}
       </body>
