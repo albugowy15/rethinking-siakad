@@ -1,14 +1,4 @@
 {
-  "extends": ["next/core-web-vitals", "../../.eslintrc.json"],
-  "ignorePatterns": [".next/**/*"],
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx"],
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "rules": {}
-    }
-  ]
+  "extends": ["../../.eslintrc.json"],
+  "ignorePatterns": [".next/**/*"]
 }
