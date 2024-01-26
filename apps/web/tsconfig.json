@@ -3,6 +3,13 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "next-env.d.ts"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+  ],
   "exclude": [".next"],
 }
