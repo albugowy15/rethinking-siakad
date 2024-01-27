@@ -8,10 +8,7 @@ export const Heading1 = React.forwardRef<HTMLHeadingElement, HeadingProps>(
   ({ children, className, ...props }, ref) => {
     return (
       <h1
-        className={cn(
-          'text-4xl font-extrabold tracking-tight lg:text-5xl',
-          className,
-        )}
+        className={cn('text-4xl font-extrabold tracking-tight', className)}
         {...props}
         ref={ref}
       >

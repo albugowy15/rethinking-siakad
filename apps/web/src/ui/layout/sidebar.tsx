@@ -4,13 +4,7 @@ import Link from 'next/link';
 
 const Sidebar = () => {
   return (
-    <aside className="h-screen w-[290px] border-r px-5 py-2">
-      <section className="mb-5">
-        <Text className="py-2 pt-5 font-bold" variant="large">
-          SIAKAD
-        </Text>
-        <Text variant="small">Sistem Informasi Akademik</Text>
-      </section>
+    <div className="w-full">
       <section className="space-y-3">
         {sidebarMenus.map((menu) => (
           <div key={menu.id}>
@@ -30,7 +24,7 @@ const Sidebar = () => {
           </div>
         ))}
       </section>
-    </aside>
+    </div>
   );
 };
 

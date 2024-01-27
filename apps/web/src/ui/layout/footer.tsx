@@ -2,9 +2,9 @@ import { Text } from '@rethinking-siakad/ui';
 
 const Footer = () => {
   return (
-    <footer className="p-5">
-      <Text variant="muted" className="">
-        Copyright 2024
+    <footer className="px-8 py-4">
+      <Text variant="muted" className="font-semibold">
+        Copyright 2024 - Rethiking SIAKAD by Mohamad Kholid Bughowi
       </Text>
     </footer>
   );

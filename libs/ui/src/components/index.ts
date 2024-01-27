@@ -7,6 +7,7 @@ export * from './ui/form';
 export * from './ui/input';
 export * from './ui/label';
 export * from './ui/radio-group';
+export * from './ui/scroll-area';
 export * from './ui/select';
 export * from './ui/separator';
 export * from './ui/sonner';
