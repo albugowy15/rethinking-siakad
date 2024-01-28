@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    /* Base Options: */
     "esModuleInterop": true,
     "skipLibCheck": true,
     "target": "es2022",
@@ -9,21 +8,20 @@
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "isolatedModules": true,
-
-    /* Strictness */
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "checkJs": true,
-
-    /* Bundled projects */
     "lib": ["dom", "dom.iterable", "ES2022"],
     "noEmit": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "jsx": "preserve",
-    "plugins": [{ "name": "next" }],
+    "plugins": [
+      {
+        "name": "next",
+      },
+    ],
     "incremental": true,
-
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -33,8 +31,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@rethinking-siakad/ui": ["libs/ui/src/index.ts"],
       "@rethinking-siakad/tailwind-preset": ["libs/ui/src/tailwind-preset.ts"],
+      "@rethinking-siakad/ui": ["libs/ui/src/index.ts"],
     },
   },
   "exclude": ["node_modules", "tmp", "dist"],
