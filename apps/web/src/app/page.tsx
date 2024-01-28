@@ -3,6 +3,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
   Heading1,
@@ -10,67 +11,14 @@ import {
   Text,
 } from '@rethinking-siakad/ui';
 import Link from 'next/link';
-
-interface AcademicInfo {
-  id: string;
-  title: string;
-  value: string | number;
-}
-const acamemicsInfo: AcademicInfo[] = [
-  {
-    id: crypto.randomUUID(),
-    title: 'Indeks Prestasi Kumulatif',
-    value: 3.78,
-  },
-  {
-    id: crypto.randomUUID(),
-    title: 'Tahun Ajaran',
-    value: '2023/2024',
-  },
-  {
-    id: crypto.randomUUID(),
-    title: 'Semester Aktif',
-    value: '8 (Genap)',
-  },
-  {
-    id: crypto.randomUUID(),
-    title: 'Status FRS',
-    value: 'Belum disetujui',
-  },
-  {
-    id: crypto.randomUUID(),
-    title: 'Kuesioner IPD',
-    value: 'Belum Lengkap',
-  },
-  {
-    id: crypto.randomUUID(),
-    title: 'Status Pembayaran UKT',
-    value: 'Lunas',
-  },
-];
-
-interface Announcement {
-  id: string;
-  title: string;
-  desc: string;
-}
-const announcements: Announcement[] = [
-  {
-    id: crypto.randomUUID(),
-    title: 'Pembayaran UKT Semester Genap 2023/2024',
-    desc: 'UKT untuk semester genap tahun ajaran 2023/2024 dapat dibayarkan mulai tanggal 1 sampai 25 Februari 2024.',
-  },
-  {
-    id: crypto.randomUUID(),
-    title: 'Pembayaran UKT Semester Genap 2023/2024',
-    desc: 'UKT untuk semester genap tahun ajaran 2023/2024 dapat dibayarkan mulai tanggal 1 sampai 25 Februari 2024.',
-  },
-  {
-    id: crypto.randomUUID(),
-    title: 'Pembayaran UKT Semester Genap 2023/2024',
-    desc: 'UKT untuk semester genap tahun ajaran 2023/2024 dapat dibayarkan mulai tanggal 1 sampai 25 Februari 2024.',
-  },
-];
+import {
+  acamemicsInfo,
+  type AcademicInfo,
+  announcements,
+  type News,
+  news,
+} from './data';
+import Image from 'next/image';
 
 const AcademicCard = (props: { data: AcademicInfo }) => {
   return (
@@ -82,6 +30,26 @@ const AcademicCard = (props: { data: AcademicInfo }) => {
         <Text>{props.data.value}</Text>
       </CardContent>
     </Card>
+  );
+};
+
+const NewsCard = (props: { data: News }) => {
+  return (
+    <div className="hover:bg-muted w-fit rounded-lg p-1.5 transition-colors hover:cursor-pointer">
+      <Image
+        className="rounded-lg"
+        src={props.data.thumbnail}
+        width={180}
+        height={130}
+        alt={props.data.title}
+      />
+      <div className="py-1.5" />
+      <Text variant="small" className="text-muted-foreground py-1 text-xs">
+        {props.data.date.toLocaleString()}
+      </Text>
+      <Heading4 className="line-clamp-2 text-sm">{props.data.title}</Heading4>
+      <Text className="line-clamp-2 text-xs">{props.data.desc}</Text>
+    </div>
   );
 };
 
@@ -111,19 +79,28 @@ export default async function Index() {
         </CardContent>
       </Card>
 
-      <section className="mt-6 flex justify-start gap-4">
+      <section className="mt-6 flex items-start justify-start gap-4">
         <Card className="flex-1">
           <CardHeader>
             <CardTitle>Berita</CardTitle>
           </CardHeader>
-          <CardContent></CardContent>
+          <CardContent className="grid grid-cols-3 gap-1">
+            {news.map((item) => (
+              <NewsCard key={item.id} data={item} />
+            ))}
+          </CardContent>
+          <CardFooter>
+            <Button asChild variant="outline" className="w-full">
+              <Link href="/news">Lihat Semua</Link>
+            </Button>
+          </CardFooter>
         </Card>
         <Card className="w-[380px]">
           <CardHeader className="pb-3">
             <CardTitle>Pengumuman</CardTitle>
           </CardHeader>
           <CardContent className="px-3">
-            <div className="mb-5">
+            <div>
               {announcements.map((item) => (
                 <div
                   key={item.id}
@@ -141,11 +118,12 @@ export default async function Index() {
                 </div>
               ))}
             </div>
+          </CardContent>
+          <CardFooter>
             <Button asChild variant="outline" className="w-full">
               <Link href="/announcements">Lihat Semua</Link>
             </Button>
-            <div className="py-0" />
-          </CardContent>
+          </CardFooter>
         </Card>
       </section>
     </div>

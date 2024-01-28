@@ -36,7 +36,7 @@ export const sidebarMenus: SidebarMenu[] = [
       {
         id: crypto.randomUUID(),
         icon: <NotepadText className="mr-2 h-4 w-4" />,
-        link: '/data/biodate',
+        link: '/data/biodata',
         title: 'Biodata',
       },
       {
