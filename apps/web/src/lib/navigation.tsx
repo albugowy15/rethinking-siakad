@@ -2,7 +2,6 @@ import {
   ArrowLeftRight,
   CalendarCheck,
   FileQuestion,
-  GraduationCap,
   Library,
   ListChecks,
   MonitorCheck,
@@ -27,12 +26,6 @@ export const sidebarMenus: SidebarMenu[] = [
     id: crypto.randomUUID(),
     parent: 'Data',
     child: [
-      {
-        id: crypto.randomUUID(),
-        icon: <GraduationCap className="mr-2 h-4 w-4" />,
-        link: '/data/graduation',
-        title: 'Wisuda',
-      },
       {
         id: crypto.randomUUID(),
         icon: <NotepadText className="mr-2 h-4 w-4" />,

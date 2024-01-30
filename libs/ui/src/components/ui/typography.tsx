@@ -24,7 +24,7 @@ export const Heading2 = React.forwardRef<HTMLHeadingElement, HeadingProps>(
     return (
       <h2
         className={cn(
-          'border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0',
+          'pb-2 text-3xl font-semibold tracking-tight first:mt-0',
           className,
         )}
         {...props}
